@@ -134,7 +134,7 @@ func New(opts *Options) *Server {
 		GitCommit:         gitCommit,
 		GoVersion:         runtime.Version(),
 		Host:              opts.Host,
-		Port:              opts.Port,
+		Port:              os.Getenv("PORT"),
 		AuthRequired:      false,
 		TLSRequired:       tlsReq,
 		TLSVerify:         verify,
