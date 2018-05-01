@@ -128,13 +128,18 @@ func New(opts *Options) *Server {
 	tlsReq := opts.TLSConfig != nil
 	verify := (tlsReq && opts.TLSConfig.ClientAuth == tls.RequireAndVerifyClientCert)
 
+	port, err := strconv.Atoi(os.Getenv("PORT"))
+	if err != nil {
+		return nil
+	}
+
 	info := Info{
 		ID:                genID(),
 		Version:           VERSION,
 		GitCommit:         gitCommit,
 		GoVersion:         runtime.Version(),
 		Host:              opts.Host,
-		Port:              os.Getenv("PORT"),
+		Port:              port,
 		AuthRequired:      false,
 		TLSRequired:       tlsReq,
 		TLSVerify:         verify,
