@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/nats-io/gnatsd/server"
+	"github.com/harkce/gnatsd/server"
 )
 
 var usageStr = `

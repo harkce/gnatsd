@@ -27,8 +27,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/nats-io/gnatsd/conf"
-	"github.com/nats-io/gnatsd/util"
+	"github.com/harkce/gnatsd/conf"
+	"github.com/harkce/gnatsd/util"
 )
 
 // ClusterOpts are options for clusters.
